@@ -11,3 +11,15 @@ class Database(object):
         client = pymongo.MongoClient(Database.URI)
 
         Database.DATABASE = client['fullstack']
+
+    @staticmethod
+    def insert(collection,data):
+        Database.DATABASE[collection].insert(data)
+
+    @staticmethod
+    def find(collection, query):
+        Database.DATABASE[collection].insert(query)
+
+    @staticmethod
+    def find_one(collection, query):
+        Database.DATABASE[collection].insert(query)

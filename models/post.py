@@ -1,3 +1,5 @@
+from src.database import Database
+
 
 class Post(object):
 
