@@ -10,7 +10,7 @@ class Post(object):
         self.created_date = date
 
     def save_to_mongo(self):
-        Database.insert('posts',self.json())
+        Database.insert(collection = 'posts', data  = self.json())
 
     def json(self):
         return {
