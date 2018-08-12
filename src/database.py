@@ -1,3 +1,25 @@
+import pymongo
+
 
 class Database(object):
-    pass
+    URI = "mongodb://127.0.0.1:27017"
+
+    DATABASE = None
+
+    @staticmethod
+    def initialize():
+        client = pymongo.MongoClient(Database.URI)
+
+        Database.DATABASE = client['fullstack']
+
+    @staticmethod
+    def insert(collection,data):
+        Database.DATABASE[collection].insert(data)
+
+    @staticmethod
+    def find(collection, query):
+        Database.DATABASE[collection].insert(query)
+
+    @staticmethod
+    def find_one(collection, query):
+        Database.DATABASE[collection].insert(query)
